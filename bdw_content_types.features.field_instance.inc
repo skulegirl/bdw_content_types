@@ -64,10 +64,10 @@ function bdw_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
+        'label' => 'hidden',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'file_default',
         'weight' => 12,
       ),
       'full' => array(
@@ -114,6 +114,7 @@ function bdw_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'field_free_filename',
     'label' => 'filename',
     'required' => 0,
@@ -121,13 +122,32 @@ function bdw_content_types_field_default_field_instances() {
       'description_field' => 0,
       'exclude_cv' => FALSE,
       'file_directory' => 'private',
-      'file_extensions' => '',
+      'file_extensions' => 'pdf',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '/FreeFilesForMembers',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'weight' => -1,
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'file',
       'settings' => array(
         'progress_indicator' => 'bar',
@@ -536,7 +556,7 @@ function bdw_content_types_field_default_field_instances() {
     'bundle' => 'testimonial',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please submit a testimonial telling us what you love about the "Boondockers Welcome" site.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -557,16 +577,18 @@ function bdw_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'body',
     'label' => 'Testimonial ',
     'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 0,
       'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -582,7 +604,7 @@ function bdw_content_types_field_default_field_instances() {
     'bundle' => 'user_recommendation',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'A recommendation of one user made by another. ',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -603,16 +625,18 @@ function bdw_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'body',
     'label' => 'Recommendation',
     'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 0,
       'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -626,7 +650,7 @@ function bdw_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-user_recommendation-field_ur_fellow_boondocker'
   $field_instances['node-user_recommendation-field_ur_fellow_boondocker'] = array(
     'bundle' => 'user_recommendation',
-    'default_value' => '',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -688,6 +712,7 @@ function bdw_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'field_ur_fellow_boondocker',
     'label' => 'Recommended Fellow Boondocker ',
     'required' => 1,
@@ -697,13 +722,11 @@ function bdw_content_types_field_default_field_instances() {
     ),
     'weight' => 35,
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'user_reference',
       'settings' => array(
-        'autocomplete_match' => 'starts_with',
+        'autocomplete_match' => 'contains',
         'autocomplete_path' => 'user_reference/autocomplete',
-        'default_value' => NULL,
-        'reverse_link' => 1,
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
@@ -717,7 +740,7 @@ function bdw_content_types_field_default_field_instances() {
     'bundle' => 'webform',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -764,13 +787,10 @@ function bdw_content_types_field_default_field_instances() {
   t('A <em>story</em>, similar in form to a <em>page</em>, is ideal for creating and displaying content that informs or engages website visitors. Press releases, site announcements, and informal blog-like entries may all be created with a <em>story</em> entry. By default, a <em>story</em> entry is automatically featured on the site\'s initial home page, and provides the ability to post comments.');
   t('A free file download');
   t('A newsletter issue to be sent to subscribed email addresses.');
-  t('A recommendation of one user made by another. ');
   t('Body');
-  t('Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.');
   t('Description');
   t('Image');
   t('Newsletter');
-  t('Please submit a testimonial telling us what you love about the "Boondockers Welcome" site.');
   t('Recommendation');
   t('Recommended Fellow Boondocker ');
   t('Testimonial ');

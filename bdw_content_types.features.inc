@@ -53,7 +53,7 @@ function bdw_content_types_node_info() {
     'user_recommendation' => array(
       'name' => t('User Recommendation'),
       'base' => 'node_content',
-      'description' => t('A recommendation of one user made by another. '),
+      'description' => t('A recommendation of one user made by another.'),
       'has_title' => '1',
       'title_label' => t('Recommendation Headline'),
       'help' => t('Tell us how you met another member, how well you got along, and whether you would recommend him to others, as either a host or guest.'),

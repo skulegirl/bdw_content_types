@@ -5,6 +5,7 @@ package = BDW Features
 dependencies[] = date
 dependencies[] = features
 dependencies[] = file
+dependencies[] = filefield_paths
 dependencies[] = image
 dependencies[] = options
 dependencies[] = taxonomy

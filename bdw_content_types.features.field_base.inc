@@ -19,6 +19,14 @@ function bdw_content_types_field_default_field_bases() {
       0 => 'node',
     ),
     'field_name' => 'body',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -27,8 +35,9 @@ function bdw_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'profile2_private' => FALSE,
       'views_base_columns' => array(),
-      'views_base_table' => FALSE,
+      'views_base_table' => 0,
     ),
     'translatable' => 0,
     'type' => 'text_with_summary',
@@ -59,10 +68,11 @@ function bdw_content_types_field_default_field_bases() {
     'settings' => array(
       'description_field' => 0,
       'display_default' => 1,
-      'display_field' => 0,
-      'uri_scheme' => 'public',
+      'display_field' => 1,
+      'profile2_private' => FALSE,
+      'uri_scheme' => 'private',
       'views_base_columns' => array(),
-      'views_base_table' => FALSE,
+      'views_base_table' => 0,
     ),
     'translatable' => 0,
     'type' => 'file',
@@ -128,6 +138,7 @@ function bdw_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'user_reference',
     'settings' => array(
+      'profile2_private' => FALSE,
       'referenceable_roles' => array(
         2 => 0,
         3 => 0,
@@ -137,8 +148,19 @@ function bdw_content_types_field_default_field_bases() {
         10 => 0,
         11 => 0,
         13 => 0,
+        15 => 0,
+        16 => 0,
+        17 => 0,
+        18 => 0,
+        19 => 0,
+        20 => 0,
+        21 => 0,
       ),
-      'referenceable_status' => 1,
+      'referenceable_status' => array(
+        0 => 0,
+        1 => 1,
+      ),
+      'uid_in_autocomplete' => 0,
       'view' => array(
         'args' => array(
           0 => '',
@@ -147,7 +169,7 @@ function bdw_content_types_field_default_field_bases() {
         'view_name' => '--',
       ),
       'views_base_columns' => array(),
-      'views_base_table' => FALSE,
+      'views_base_table' => 0,
     ),
     'translatable' => 0,
     'type' => 'user_reference',
@@ -161,6 +183,14 @@ function bdw_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'taxonomy_vocabulary_1',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
