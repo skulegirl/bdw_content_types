@@ -115,6 +115,40 @@ function bdw_content_types_field_default_field_bases() {
     'type_name' => 'uc_recurring_subscription',
   );
 
+  // Exported field_base: 'field_testimonial_highligted'
+  $field_bases['field_testimonial_highligted'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_testimonial_highligted',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Not Highligted',
+        1 => 'Highlighted',
+      ),
+      'allowed_values_function' => '',
+      'allowed_values_php' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'views_base_columns' => array(),
+      'views_base_table' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+    'type_name' => 'testimonial',
+  );
+
   // Exported field_base: 'field_ur_fellow_boondocker'
   $field_bases['field_ur_fellow_boondocker'] = array(
     'active' => 1,
@@ -201,7 +235,7 @@ function bdw_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'vocabulary_1',
+          'vocabulary' => 'newsletter',
           'parent' => 0,
         ),
       ),

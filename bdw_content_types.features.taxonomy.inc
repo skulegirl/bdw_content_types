@@ -9,9 +9,9 @@
  */
 function bdw_content_types_taxonomy_default_vocabularies() {
   return array(
-    'vocabulary_1' => array(
+    'newsletter' => array(
       'name' => 'Newsletter',
-      'machine_name' => 'vocabulary_1',
+      'machine_name' => 'newsletter',
       'description' => NULL,
       'hierarchy' => 0,
       'module' => 'simplenews',
